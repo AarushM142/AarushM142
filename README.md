@@ -3,8 +3,9 @@
 
 <div align="center">
 
-> CSE student building production-grade systems at the intersection of AI, automation, and full-stack engineering.
-> Focused on shipping things that actually work.
+> Hi, I’m Aarush. I’m not really here to build one thing and call it a day. 
+
+> There’s a lot I want to learn, a lot I want to build, and I’m playing the long game.
 
 <br/>
 
