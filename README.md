@@ -128,8 +128,6 @@ Python · OpenCV · PaddleOCR
 
 <br/>
 
-<!-- Live activity graph — styled to match the terminal aesthetic -->
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=AarushM142&bg_color=0a0a0a&color=00ff41&line=006622&point=00ff41&area=true&area_color=003a10&hide_border=false&border_color=006622&custom_title=COMMIT+ACTIVITY" width="800" alt="AarushM142 GitHub Activity Graph" />
 
 </div>
 
