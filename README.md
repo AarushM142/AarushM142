@@ -3,31 +3,18 @@
 
 <div align="center">
 
-<!-- ═══════════════════════════════════════════════
-     HERO — BOOT SEQUENCE + IDENTITY REVEAL
-     Animated SVG: boot sequence → glitch → identity lock
-════════════════════════════════════════════════ -->
+> CSE student building production-grade systems at the intersection of AI, automation, and full-stack engineering.
+> Focused on shipping things that actually work.
 
-<img src="assets/hero/boot.svg" width="800" alt="AM.DEV — Boot Sequence" />
-
-</div>
-
----
+<br/>
 
 <!-- ═══════════════════════════════════════════════
      WHOAMI + STACK TERMINAL
 ════════════════════════════════════════════════ -->
 
-<div align="center">
-
 <img src="assets/hero/terminal.svg" width="800" alt="whoami + stack terminal" />
 
 </div>
-
-<br/>
-
-> CSE student building production-grade systems at the intersection of AI, automation, and full-stack engineering.
-> Focused on shipping things that actually work.
 
 ---
 
@@ -138,10 +125,6 @@ Python · OpenCV · PaddleOCR
 ════════════════════════════════════════════════ -->
 
 <div align="center">
-
-<img src="assets/contact/connect.svg" width="800" alt="./connect.sh — Contact terminal" />
-
-<br/>
 
 <a href="https://github.com/AarushM142"><img src="assets/icons/github.svg" width="22" height="22" alt="GitHub"/></a>&nbsp;&nbsp;
 <a href="https://www.linkedin.com/in/aarush-majumdar/"><img src="assets/icons/linkedin.svg" width="22" height="22" alt="LinkedIn"/></a>&nbsp;&nbsp;
