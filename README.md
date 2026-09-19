@@ -2,10 +2,9 @@
 <!-- DO NOT EDIT THE RAW HTML — use scripts/generate-assets.js to regenerate SVGs -->
 
 <div align="center">
+> **Hi, I’m Aarush. I’m not really here to build one thing and call it a day.**
 
-> Hi, I’m Aarush. I’m not really here to build one thing and call it a day. 
-
-> There’s a lot I want to learn, a lot I want to build, and I’m playing the long game.
+> **There’s a lot I want to learn, a lot I want to build, and I’m playing the long game.**
 
 <br/>
 
