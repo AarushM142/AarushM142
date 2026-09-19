@@ -12,7 +12,7 @@
      WHOAMI + STACK TERMINAL
 ════════════════════════════════════════════════ -->
 
-<img src="assets/hero/terminal.svg" width="800" alt="whoami + stack terminal" />
+<img src="assets/hero/terminal.svg" width="650" alt="whoami + stack terminal" />
 
 </div>
 
@@ -24,7 +24,7 @@
 
 <div align="center">
 
-<img src="assets/projects/projects.svg" width="800" alt="Project Terminal — DeepTrace · ResQSampark · MetrologyEye" />
+<img src="assets/projects/projects.svg" width="650" alt="Project Terminal — DeepTrace · ResQSampark · MetrologyEye" />
 
 </div>
 
@@ -40,7 +40,7 @@
 
 
 
-<img src="assets/github/contributions.svg" width="800" alt="Contribution Grid" />
+<img src="assets/github/contributions.svg" width="650" alt="Contribution Grid" />
 
 <br/>
 
@@ -54,6 +54,8 @@
 ════════════════════════════════════════════════ -->
 
 <div align="center">
+
+<h3>Connect with me</h3>
 
 <a href="https://github.com/AarushM142"><img src="assets/icons/github.svg" width="22" height="22" alt="GitHub"/></a>&nbsp;&nbsp;
 <a href="https://www.linkedin.com/in/aarush-majumdar/"><img src="assets/icons/linkedin.svg" width="22" height="22" alt="LinkedIn"/></a>&nbsp;&nbsp;
