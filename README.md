@@ -4,7 +4,7 @@
 <div align="center">
 <h3>Hi, I’m Aarush. I’m not really here to build one thing and call it a day.</h3>
 
-<h3>There’s a lot I want to learn, a lot I want to build, and I’m playing the long game.</h3>
+<h3>There’s a lot I want to learn, a lot I want to build, and I’m playing the long game :D </h3>
 
 <br/>
 
