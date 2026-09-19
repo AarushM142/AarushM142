@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <defs>
+    <style>
+      .bg { fill: #0a0a0a; }
+      .t  { font-family: 'Courier New', monospace; }
+
+      /* Prompt */
+      .prompt { fill: #006622; font-size: 13px; opacity: 0; }
+      .cmd    { fill: #00ff41; font-size: 13px; opacity: 0; }
+      .out    { fill: #00cc33; font-size: 13px; opacity: 0; }
+      .dim    { fill: #004d15; font-size: 13px; opacity: 0; }
+      .head   { fill: #00ff41; font-size: 13px; opacity: 0; font-weight: bold; }
+      .ready  { fill: #00ff41; font-size: 13px; opacity: 0; }
+      .cursor { fill: #00ff41; font-size: 13px; }
+
+      /* Whoami section */
+      .p1  { animation: fi 0.2s 0.3s  forwards; }
+      .p2  { animation: fi 0.2s 0.6s  forwards; }
+
+      .w1  { animation: fi 0.2s 1.1s  forwards; }
+      .w2  { animation: fi 0.2s 1.5s  forwards; }
+      .w3  { animation: fi 0.2s 1.9s  forwards; }
+      .w4  { animation: fi 0.2s 2.3s  forwards; }
+
+      /* Stack section */
+      .s0  { animation: fi 0.2s 3.0s  forwards; }
+      .s1  { animation: fi 0.2s 3.2s  forwards; }
+      .s2  { animation: fi 0.2s 3.55s forwards; }
+      .s3  { animation: fi 0.2s 3.9s  forwards; }
+      .s4  { animation: fi 0.2s 4.25s forwards; }
+      .s5  { animation: fi 0.2s 4.6s  forwards; }
+      .s6  { animation: fi 0.2s 4.95s forwards; }
+      .s7  { animation: fi 0.2s 5.3s  forwards; }
+      .s8  { animation: fi 0.2s 5.65s forwards; }
+
+      .cur { animation: blink 1s 6s infinite; }
+
+      /* Loop wrapper */
+      .wrap { animation: loop 14s linear infinite; }
+
+      @keyframes fi {
+        to { opacity: 1; }
+      }
+
+      @keyframes blink {
+        0%, 49%  { opacity: 1; }
+        50%, 100%{ opacity: 0; }
+      }
+
+      @keyframes loop {
+        0%   { opacity: 1; }
+        80%  { opacity: 1; }
+        88%  { opacity: 0; }
+        95%  { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    </style>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect class="bg" width="800" height="480"/>
+  <rect x="1" y="1" width="798" height="478" fill="none" stroke="#00ff41" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <g class="wrap t">
+
+    <!-- $ whoami -->
+    <text class="prompt p1" x="40" y="44">
+      <tspan fill="#006622">AM</tspan><tspan fill="#004d15">@</tspan><tspan fill="#00ff41">dev</tspan><tspan fill="#006622">:~$</tspan>
+    </text>
+    <text class="cmd p2" x="140" y="44"> whoami</text>
+
+    <!-- whoami output -->
+    <text class="head w1" x="40" y="72" font-size="18" filter="url(#glow)">AM</text>
+    <text class="out  w2" x="40" y="96">CSE student  •  Full-Stack  •  AI  •  Systems</text>
+    <text class="out  w3" x="40" y="116">React / Next.js / TypeScript / Backend / Automation</text>
+    <text class="dim  w4" x="40" y="138">─────────────────────────────────────────────────────</text>
+
+    <!-- Spacer -->
+
+    <!-- $ ls ~/stack -->
+    <text class="prompt s0" x="40" y="174">
+      <tspan fill="#006622">AM</tspan><tspan fill="#004d15">@</tspan><tspan fill="#00ff41">dev</tspan><tspan fill="#006622">:~$</tspan>
+    </text>
+    <text class="cmd   s0" x="140" y="174"> ls ~/stack</text>
+
+    <!-- Stack output — each glitches into READY -->
+    <text class="out s1" x="40" y="208">React          <tspan fill="#004d15">............</tspan> <tspan fill="#00ff41" filter="url(#glow)">READY</tspan></text>
+    <text class="out s2" x="40" y="232">Next.js        <tspan fill="#004d15">............</tspan> <tspan fill="#00ff41" filter="url(#glow)">READY</tspan></text>
+    <text class="out s3" x="40" y="256">TypeScript     <tspan fill="#004d15">............</tspan> <tspan fill="#00ff41" filter="url(#glow)">READY</tspan></text>
+    <text class="out s4" x="40" y="280">Supabase       <tspan fill="#004d15">............</tspan> <tspan fill="#00ff41" filter="url(#glow)">READY</tspan></text>
+    <text class="out s5" x="40" y="304">Firebase       <tspan fill="#004d15">............</tspan> <tspan fill="#00ff41" filter="url(#glow)">READY</tspan></text>
+    <text class="out s6" x="40" y="328">Convex         <tspan fill="#004d15">............</tspan> <tspan fill="#00ff41" filter="url(#glow)">READY</tspan></text>
+    <text class="out s7" x="40" y="352">Redis          <tspan fill="#004d15">............</tspan> <tspan fill="#00ff41" filter="url(#glow)">READY</tspan></text>
+    <text class="out s8" x="40" y="376">Vercel         <tspan fill="#004d15">............</tspan> <tspan fill="#00ff41" filter="url(#glow)">READY</tspan></text>
+
+    <!-- Blinking cursor -->
+    <text class="cursor cur" x="40" y="416">_</text>
+
+  </g>
+
+  <!-- scanline overlay -->
+  <rect width="800" height="480" fill="none" stroke="none" opacity="0.03"
+    style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,65,0.05) 2px, rgba(0,255,65,0.05) 3px)"/>
+</svg>

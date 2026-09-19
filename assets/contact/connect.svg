@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+  <defs>
+    <style>
+      .bg { fill: #0a0a0a; }
+      .t  { font-family: 'Courier New', monospace; font-size: 13px; }
+
+      .fade { opacity: 0; }
+
+      /* Syncing message */
+      .sy1 { animation: fi 0.2s 0.3s forwards; }
+      .sy2 { animation: fi 0.2s 0.8s forwards; }
+
+      /* Connect terminal */
+      .c0  { animation: fi 0.2s 1.5s forwards; }
+      .c1  { animation: fi 0.2s 1.7s forwards; }
+      .c2  { animation: fi 0.2s 1.9s forwards; }
+      .c3  { animation: fi 0.2s 2.1s forwards; }
+      .c4  { animation: fi 0.2s 2.3s forwards; }
+
+      /* Status glitch → resolve */
+      .st1 { animation: fi 0.2s 1.7s forwards, statusGlitch 0.5s 2.5s forwards; }
+      .st2 { animation: fi 0.2s 1.9s forwards, statusGlitch 0.5s 2.7s forwards; }
+      .st3 { animation: fi 0.2s 2.1s forwards, statusGlitch 0.5s 2.9s forwards; }
+      .st4 { animation: fi 0.2s 2.3s forwards, statusGlitch 0.5s 3.1s forwards; }
+
+      .cur { animation: blink 1s 4s infinite; }
+
+      .wrap { animation: loop 10s linear infinite; }
+
+      @keyframes fi {
+        to { opacity: 1; }
+      }
+
+      @keyframes statusGlitch {
+        0%   { fill: #00ff41; }
+        25%  { fill: #ff0044; transform: translate(2px, 0); }
+        50%  { fill: #00ffff; transform: translate(-2px, 0); }
+        75%  { fill: #ffff00; }
+        100% { fill: #00ff41; transform: translate(0, 0); }
+      }
+
+      @keyframes blink {
+        0%,49%   { opacity: 1; }
+        50%,100% { opacity: 0; }
+      }
+
+      @keyframes loop {
+        0%   { opacity: 1; }
+        80%  { opacity: 1; }
+        88%  { opacity: 0; }
+        95%  { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    </style>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect class="bg" width="800" height="300"/>
+  <rect x="1" y="1" width="798" height="298" fill="none" stroke="#00ff41" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <g class="wrap t">
+
+    <!-- SYNCING line -->
+    <text class="fade sy1" x="40" y="46" fill="#004d15" font-size="13">
+      <tspan fill="#006622">[ SYS ] </tspan><tspan fill="#00cc33">SYNCING GITHUB...</tspan>
+    </text>
+    <text class="fade sy2" x="40" y="68" fill="#004d15" font-size="13">
+      <tspan fill="#006622">[ OK  ] </tspan><tspan fill="#00ff41">CONNECTION ESTABLISHED</tspan>
+    </text>
+
+    <!-- $ ./connect.sh -->
+    <text class="fade c0" x="40" y="104" fill="#006622" font-size="13">
+      <tspan fill="#006622">AM@dev:~$</tspan><tspan fill="#00ff41"> ./connect.sh</tspan>
+    </text>
+
+    <!-- Contact lines -->
+    <text class="fade c1" x="40" y="136" fill="#00cc33" font-size="13">
+      GitHub<tspan fill="#004d15">    ........</tspan>
+      <tspan class="st1" fill="#00ff41" filter="url(#glow)"> ONLINE</tspan>
+    </text>
+    <text class="fade c2" x="40" y="162" fill="#00cc33" font-size="13">
+      LinkedIn<tspan fill="#004d15">  ........</tspan>
+      <tspan class="st2" fill="#00ff41" filter="url(#glow)"> ONLINE</tspan>
+    </text>
+    <text class="fade c3" x="40" y="188" fill="#00cc33" font-size="13">
+      Email<tspan fill="#004d15">     ........</tspan>
+      <tspan class="st3" fill="#00ff41" filter="url(#glow)"> READY</tspan>
+    </text>
+    <text class="fade c4" x="40" y="214" fill="#00cc33" font-size="13">
+      Instagram<tspan fill="#004d15"> ........</tspan>
+      <tspan class="st4" fill="#00ff41" filter="url(#glow)"> ONLINE</tspan>
+    </text>
+
+    <!-- Reboot -->
+    <text class="fade c0" x="40" y="254" fill="#006622" font-size="13" style="animation-delay:5s">
+      <tspan fill="#006622">AM@dev:~$</tspan><tspan fill="#00cc33"> reboot</tspan>
+    </text>
+
+    <text class="fade cur" x="40" y="278" fill="#00ff41" font-size="13">_</text>
+
+  </g>
+</svg>

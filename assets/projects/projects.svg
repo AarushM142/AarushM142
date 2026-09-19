@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="395" viewBox="0 0 800 395">
+  <defs>
+    <style>
+      .t { font-family: 'Courier New', monospace; }
+
+      /* ── CARD GROUP ANIMATIONS ── */
+      /* Left (DeepTrace)  active: 10%–37% of 15s = 1.5s–5.55s */
+      .cgl {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        animation: popL 15s ease-in-out infinite;
+      }
+      /* Center (ResQSampark) active: 43%–70% = 6.45s–10.5s */
+      .cgc {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        animation: popC 15s ease-in-out infinite;
+      }
+      /* Right (MetrologyEye) active: 76%–97% = 11.4s–14.55s */
+      .cgr {
+        transform-box: fill-box;
+        transform-origin: 50% 100%;
+        animation: popR 15s ease-in-out infinite;
+      }
+
+      @keyframes popL {
+        0%,8%  { transform: rotate(-7deg); }
+        13%    { transform: rotate(-7deg) translateY(-52px); }
+        37%    { transform: rotate(-7deg) translateY(-52px); }
+        42%    { transform: rotate(-7deg); }
+        100%   { transform: rotate(-7deg); }
+      }
+      @keyframes popC {
+        0%,41% { transform: translateY(0); }
+        46%    { transform: translateY(-52px); }
+        70%    { transform: translateY(-52px); }
+        75%    { transform: translateY(0); }
+        100%   { transform: translateY(0); }
+      }
+      @keyframes popR {
+        0%,74% { transform: rotate(7deg); }
+        79%    { transform: rotate(7deg) translateY(-52px); }
+        97%    { transform: rotate(7deg) translateY(-52px); }
+        100%   { transform: rotate(7deg); }
+      }
+
+      /* ── CARD BORDER GLOW (stroke animation) ── */
+      .bl { animation: bdrL 15s ease-in-out infinite; }
+      .bc { animation: bdrC 15s ease-in-out infinite; }
+      .br { animation: bdrR 15s ease-in-out infinite; }
+
+      @keyframes bdrL {
+        0%,8%    { stroke: #006622; stroke-width: 1; }
+        13%,37%  { stroke: #00ff41; stroke-width: 1.5; }
+        42%,100% { stroke: #006622; stroke-width: 1; }
+      }
+      @keyframes bdrC {
+        0%,41%   { stroke: #006622; stroke-width: 1; }
+        46%,70%  { stroke: #00ff41; stroke-width: 1.5; }
+        75%,100% { stroke: #006622; stroke-width: 1; }
+      }
+      @keyframes bdrR {
+        0%,74%   { stroke: #006622; stroke-width: 1; }
+        79%,97%  { stroke: #00ff41; stroke-width: 1.5; }
+        100%     { stroke: #006622; stroke-width: 1; }
+      }
+
+      /* ── CARD TITLE GLOW ── */
+      .tgl { animation: tGlowL 15s ease-in-out infinite; }
+      .tgc { animation: tGlowC 15s ease-in-out infinite; }
+      .tgr { animation: tGlowR 15s ease-in-out infinite; }
+
+      @keyframes tGlowL {
+        0%,8%    { fill: #00cc33; }
+        13%,37%  { fill: #00ff41; filter: drop-shadow(0 0 4px #00ff41); }
+        42%,100% { fill: #00cc33; }
+      }
+      @keyframes tGlowC {
+        0%,41%   { fill: #00cc33; }
+        46%,70%  { fill: #00ff41; filter: drop-shadow(0 0 4px #00ff41); }
+        75%,100% { fill: #00cc33; }
+      }
+      @keyframes tGlowR {
+        0%,74%   { fill: #00cc33; }
+        79%,97%  { fill: #00ff41; filter: drop-shadow(0 0 4px #00ff41); }
+        100%     { fill: #00cc33; }
+      }
+
+      /* ── CONTENT REVEAL ── */
+      .cl { animation: cntL 15s ease-in-out infinite; opacity: 0; }
+      .cc { animation: cntC 15s ease-in-out infinite; opacity: 0; }
+      .cr { animation: cntR 15s ease-in-out infinite; opacity: 0; }
+
+      @keyframes cntL {
+        0%,11%   { opacity: 0; }
+        16%,36%  { opacity: 1; }
+        40%,100% { opacity: 0; }
+      }
+      @keyframes cntC {
+        0%,44%   { opacity: 0; }
+        49%,70%  { opacity: 1; }
+        74%,100% { opacity: 0; }
+      }
+      @keyframes cntR {
+        0%,77%   { opacity: 0; }
+        82%,96%  { opacity: 1; }
+        100%     { opacity: 0; }
+      }
+
+      /* ── NAV DOTS ── */
+      .nd  { fill: #002a0a; }
+      .ndl { animation: ndL 15s linear infinite; fill: #002a0a; }
+      .ndc { animation: ndC 15s linear infinite; fill: #002a0a; }
+      .ndr { animation: ndR 15s linear infinite; fill: #002a0a; }
+
+      @keyframes ndL {
+        0%,9%    { fill: #002a0a; }
+        10%,40%  { fill: #00ff41; }
+        41%,100% { fill: #002a0a; }
+      }
+      @keyframes ndC {
+        0%,42%   { fill: #002a0a; }
+        43%,73%  { fill: #00ff41; }
+        74%,100% { fill: #002a0a; }
+      }
+      @keyframes ndR {
+        0%,75%   { fill: #002a0a; }
+        76%,97%  { fill: #00ff41; }
+        100%     { fill: #002a0a; }
+      }
+
+      /* ── CURSOR ── */
+      .cur { animation: blink 1s infinite; }
+      @keyframes blink {
+        0%,49% { opacity: 1; }
+        50%,100% { opacity: 0; }
+      }
+
+      /* ── OUTER LOOP FADE ── */
+      .wrap { animation: wl 15s linear infinite; }
+      @keyframes wl {
+        0%   { opacity: 0; }
+        4%   { opacity: 1; }
+        96%  { opacity: 1; }
+        100% { opacity: 0; }
+      }
+    </style>
+
+    <filter id="gs" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="395" fill="#0a0a0a"/>
+  <rect x="1" y="1" width="798" height="393" fill="none" stroke="#00ff41" stroke-width="0.5" stroke-opacity="0.15"/>
+
+  <g class="wrap t">
+
+    <!-- Header -->
+    <text x="40" y="34" font-size="13">
+      <tspan fill="#006622">AM@dev:~$</tspan>
+      <tspan fill="#00ff41"> ls ~/projects</tspan>
+    </text>
+    <text x="40" y="52" font-size="10" fill="#003d12">──────────────────────────── autoplay · 01→02→03 ────────────────────────────</text>
+
+    <!-- ═══════════════════════════════════
+         RIGHT CARD — MetrologyEye (back z)
+    ═══════════════════════════════════ -->
+    <g class="cgr t">
+      <!-- face -->
+      <rect class="br" x="515" y="78" width="222" height="282" rx="1" fill="#04100a"/>
+      <!-- top-left bracket -->
+      <rect x="515" y="78" width="10" height="1.5" fill="#006622"/>
+      <rect x="515" y="78" width="1.5" height="10" fill="#006622"/>
+      <!-- top-right bracket -->
+      <rect x="727" y="78" width="10" height="1.5" fill="#006622"/>
+      <rect x="735.5" y="78" width="1.5" height="10" fill="#006622"/>
+
+      <!-- Always visible -->
+      <text class="tgr" x="627" y="106" text-anchor="middle" font-size="13" fill="#00cc33" font-family="'Courier New',monospace" font-weight="bold">MetrologyEye</text>
+      <line x1="529" y1="112" x2="723" y2="112" stroke="#003d12" stroke-width="0.5"/>
+      <text x="627" y="130" text-anchor="middle" font-size="10" fill="#003d12" font-family="'Courier New',monospace">[ 03 / 03 ]</text>
+
+      <!-- Revealed content -->
+      <g class="cr">
+        <text x="529" y="157" font-size="11" font-family="'Courier New',monospace">
+          <tspan fill="#006622">$</tspan><tspan fill="#004d15"> python main.py</tspan>
+        </text>
+        <text x="529" y="174" font-size="10" font-family="'Courier New',monospace">
+          <tspan fill="#004d15">&gt; OPENCV-CAPTURE </tspan><tspan fill="#00ff41">ONLINE</tspan>
+        </text>
+        <text x="529" y="189" font-size="10" font-family="'Courier New',monospace">
+          <tspan fill="#004d15">&gt; PADDLEOCR      </tspan><tspan fill="#00ff41">READY</tspan>
+        </text>
+        <line x1="529" y1="200" x2="723" y2="200" stroke="#003d12" stroke-width="0.5"/>
+        <text x="529" y="218" font-size="10" fill="#527a60" font-family="'Courier New',monospace">Detects Packaged Commodities</text>
+        <text x="529" y="233" font-size="10" fill="#527a60" font-family="'Courier New',monospace">Rules violations from product</text>
+        <text x="529" y="248" font-size="10" fill="#527a60" font-family="'Courier New',monospace">label images via CV + OCR.</text>
+        <line x1="529" y1="258" x2="723" y2="258" stroke="#003d12" stroke-width="0.5"/>
+        <text x="529" y="273" font-size="9" fill="#004d15" font-family="'Courier New',monospace">Python · OpenCV · PaddleOCR</text>
+        <text x="529" y="292" font-size="9" fill="#006622" font-family="'Courier New',monospace">→ AarushM142/MetrologyEye</text>
+        <circle cx="533" cy="326" r="3" fill="#00ff41" opacity="0.8"/>
+        <text class="cur" x="540" y="330" font-size="10" fill="#00ff41" font-family="'Courier New',monospace">_</text>
+      </g>
+    </g>
+
+    <!-- ═══════════════════════════════════
+         LEFT CARD — DeepTrace (mid z)
+    ═══════════════════════════════════ -->
+    <g class="cgl t">
+      <rect class="bl" x="63" y="78" width="222" height="282" rx="1" fill="#04100a"/>
+      <!-- top-left bracket -->
+      <rect x="63" y="78" width="10" height="1.5" fill="#006622"/>
+      <rect x="63" y="78" width="1.5" height="10" fill="#006622"/>
+      <!-- top-right bracket -->
+      <rect x="275" y="78" width="10" height="1.5" fill="#006622"/>
+      <rect x="283.5" y="78" width="1.5" height="10" fill="#006622"/>
+
+      <!-- Always visible -->
+      <text class="tgl" x="174" y="106" text-anchor="middle" font-size="13" fill="#00cc33" font-family="'Courier New',monospace" font-weight="bold">DeepTrace</text>
+      <line x1="77" y1="112" x2="271" y2="112" stroke="#003d12" stroke-width="0.5"/>
+      <text x="174" y="130" text-anchor="middle" font-size="10" fill="#003d12" font-family="'Courier New',monospace">[ 01 / 03 ]</text>
+
+      <!-- Revealed content -->
+      <g class="cl">
+        <text x="77" y="157" font-size="11" font-family="'Courier New',monospace">
+          <tspan fill="#006622">$</tspan><tspan fill="#004d15"> npm run dev</tspan>
+        </text>
+        <text x="77" y="174" font-size="10" font-family="'Courier New',monospace">
+          <tspan fill="#004d15">&gt; IMG-MATCHING   </tspan><tspan fill="#00ff41">ONLINE</tspan>
+        </text>
+        <text x="77" y="189" font-size="10" font-family="'Courier New',monospace">
+          <tspan fill="#004d15">&gt; FIRESTORE      </tspan><tspan fill="#00ff41">CONNECTED</tspan>
+        </text>
+        <line x1="77" y1="200" x2="271" y2="200" stroke="#003d12" stroke-width="0.5"/>
+        <text x="77" y="218" font-size="10" fill="#527a60" font-family="'Courier New',monospace">Detects reused sports images.</text>
+        <text x="77" y="233" font-size="10" fill="#527a60" font-family="'Courier New',monospace">Reverse-searches &amp; flags</text>
+        <text x="77" y="248" font-size="10" fill="#527a60" font-family="'Courier New',monospace">repurposed media using AI.</text>
+        <line x1="77" y1="258" x2="271" y2="258" stroke="#003d12" stroke-width="0.5"/>
+        <text x="77" y="273" font-size="9" fill="#004d15" font-family="'Courier New',monospace">Firebase · Cloudinary · Gemini</text>
+        <text x="77" y="286" font-size="9" fill="#004d15" font-family="'Courier New',monospace">SerpAPI · QStash</text>
+        <text x="77" y="305" font-size="9" fill="#006622" font-family="'Courier New',monospace">→ sohamparanjape12/DeepTrace</text>
+        <circle cx="81" cy="326" r="3" fill="#00ff41" opacity="0.8"/>
+        <text class="cur" x="88" y="330" font-size="10" fill="#00ff41" font-family="'Courier New',monospace">_</text>
+      </g>
+    </g>
+
+    <!-- ═══════════════════════════════════
+         CENTER CARD — ResQSampark (top z)
+    ═══════════════════════════════════ -->
+    <g class="cgc t">
+      <rect class="bc" x="289" y="66" width="222" height="294" rx="1" fill="#04100a"/>
+      <!-- top-left bracket — slightly thicker for center emphasis -->
+      <rect x="289" y="66" width="12" height="2" fill="#00cc33"/>
+      <rect x="289" y="66" width="2" height="12" fill="#00cc33"/>
+      <!-- top-right bracket -->
+      <rect x="499" y="66" width="12" height="2" fill="#00cc33"/>
+      <rect x="509" y="66" width="2" height="12" fill="#00cc33"/>
+
+      <!-- Always visible -->
+      <text class="tgc" x="400" y="96" text-anchor="middle" font-size="13" fill="#00cc33" font-family="'Courier New',monospace" font-weight="bold">ResQSampark</text>
+      <line x1="303" y1="103" x2="497" y2="103" stroke="#003d12" stroke-width="0.5"/>
+      <text x="400" y="120" text-anchor="middle" font-size="10" fill="#003d12" font-family="'Courier New',monospace">[ 02 / 03 ]</text>
+
+      <!-- Revealed content -->
+      <g class="cc">
+        <text x="303" y="148" font-size="11" font-family="'Courier New',monospace">
+          <tspan fill="#006622">$</tspan><tspan fill="#004d15"> npm run dev</tspan>
+        </text>
+        <text x="303" y="165" font-size="10" font-family="'Courier New',monospace">
+          <tspan fill="#004d15">&gt; WEBSOCKET-SRV  </tspan><tspan fill="#00ff41">ONLINE</tspan>
+        </text>
+        <text x="303" y="180" font-size="10" font-family="'Courier New',monospace">
+          <tspan fill="#004d15">&gt; SUPABASE-DB    </tspan><tspan fill="#00ff41">CONNECTED</tspan>
+        </text>
+        <line x1="303" y1="191" x2="497" y2="191" stroke="#003d12" stroke-width="0.5"/>
+        <text x="303" y="209" font-size="10" fill="#527a60" font-family="'Courier New',monospace">Real-time emergency response</text>
+        <text x="303" y="224" font-size="10" fill="#527a60" font-family="'Courier New',monospace">platform for coordinating</text>
+        <text x="303" y="239" font-size="10" fill="#527a60" font-family="'Courier New',monospace">field units under pressure.</text>
+        <line x1="303" y1="249" x2="497" y2="249" stroke="#003d12" stroke-width="0.5"/>
+        <text x="303" y="264" font-size="9" fill="#004d15" font-family="'Courier New',monospace">Next.js · Supabase · WebSockets</text>
+        <text x="303" y="286" font-size="9" fill="#006622" font-family="'Courier New',monospace">→ AarushM142/ResqSampark</text>
+        <circle cx="307" cy="320" r="3" fill="#00ff41" opacity="0.8"/>
+        <text class="cur" x="314" y="324" font-size="10" fill="#00ff41" font-family="'Courier New',monospace">_</text>
+      </g>
+    </g>
+
+    <!-- Navigation dots -->
+    <text x="355" y="376" font-size="11" fill="#003d12" font-family="'Courier New',monospace">←</text>
+    <rect class="ndl" x="372" y="368" width="8" height="8" rx="4"/>
+    <rect class="ndc" x="387" y="368" width="8" height="8" rx="4"/>
+    <rect class="ndr" x="402" y="368" width="8" height="8" rx="4"/>
+    <text x="415" y="376" font-size="11" fill="#003d12" font-family="'Courier New',monospace">→</text>
+
+  </g>
+</svg>

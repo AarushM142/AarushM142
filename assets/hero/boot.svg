@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360">
+  <defs>
+    <style>
+      * { font-family: 'Courier New', monospace; }
+
+      .bg { fill: #0a0a0a; }
+      .scanlines { fill: url(#scanline-pattern); opacity: 0.04; }
+
+      /* Base text */
+      .boot-line { fill: #00ff41; font-size: 14px; opacity: 0; }
+      .boot-dim  { fill: #00cc33; font-size: 14px; opacity: 0; }
+      .identity  { fill: #00ff41; font-size: 26px; font-weight: bold; opacity: 0; filter: url(#glow); }
+      .cursor    { fill: #00ff41; font-size: 14px; }
+      .prefix    { fill: #006622; font-size: 14px; }
+
+      /* Boot lines stagger in */
+      .l1 { animation: fadeIn 0.3s 0.2s forwards; }
+      .l2 { animation: fadeIn 0.3s 0.8s forwards; }
+      .l3 { animation: fadeIn 0.3s 1.4s forwards; }
+      .l4 { animation: fadeIn 0.3s 1.9s forwards; }
+      .l5 { animation: fadeIn 0.3s 2.4s forwards, pulse 0.4s 2.4s 2 alternate; }
+
+      /* Identity reveal */
+      .id-glitch { animation: fadeIn 0s 3.0s forwards, glitchReveal 0.8s 3.0s forwards; }
+      .id-final  { animation: identityLock 0s 3.8s forwards; }
+
+      /* Cursor blink */
+      .cur { animation: blink 1s 0.1s infinite; }
+
+      /* Scanline sweep */
+      .scan-sweep { animation: scanSweep 4s linear infinite; opacity: 0.06; }
+
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
+
+      @keyframes pulse {
+        from { filter: none; }
+        to   { filter: drop-shadow(0 0 6px #00ff41); }
+      }
+
+      @keyframes glitchReveal {
+        0%   { opacity: 0; }
+        10%  { opacity: 1; fill: #ff0044; transform: translate(-3px, 0); filter: drop-shadow(4px 0 0 #00ffff); }
+        20%  { fill: #00ffff; transform: translate(3px, 0);  filter: drop-shadow(-4px 0 0 #ff0044); }
+        35%  { fill: #ffff00; transform: translate(-2px, 1px); filter: none; }
+        50%  { fill: #00ff41; transform: translate(0, 0); opacity: 0.7; }
+        70%  { fill: #00ff41; transform: translate(1px, 0); }
+        85%  { fill: #00ff41; opacity: 1; }
+        100% { fill: #00ff41; transform: translate(0, 0); opacity: 0; }
+      }
+
+      @keyframes identityLock {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      @keyframes blink {
+        0%, 49%  { opacity: 1; }
+        50%, 100%{ opacity: 0; }
+      }
+
+      @keyframes scanSweep {
+        0%   { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+
+      /* Loop: full animation resets at 8s */
+      .boot-wrap {
+        animation: loopFade 8s linear infinite;
+      }
+
+      @keyframes loopFade {
+        0%    { opacity: 1; }
+        85%   { opacity: 1; }
+        92%   { opacity: 0; }
+        96%   { opacity: 0; }
+        100%  { opacity: 1; }
+      }
+    </style>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <pattern id="scanline-pattern" x="0" y="0" width="800" height="3" patternUnits="userSpaceOnUse">
+      <rect width="800" height="1" y="2" fill="#00ff41" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="800" height="360"/>
+
+  <!-- Scanlines overlay -->
+  <rect class="scanlines" width="800" height="360"/>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="798" height="358" fill="none" stroke="#00ff41" stroke-width="0.5" stroke-opacity="0.25"/>
+
+  <!-- Corner brackets -->
+  <text x="8" y="18" fill="#006622" font-size="11" font-family="monospace">┌</text>
+  <text x="782" y="18" fill="#006622" font-size="11" font-family="monospace">┐</text>
+  <text x="8" y="355" fill="#006622" font-size="11" font-family="monospace">└</text>
+  <text x="782" y="355" fill="#006622" font-size="11" font-family="monospace">┘</text>
+
+  <!-- Animated content wrapper -->
+  <g class="boot-wrap">
+
+    <!-- Boot sequence lines -->
+    <text class="boot-dim l1" x="40" y="90">
+      <tspan fill="#006622">[ </tspan><tspan fill="#00ff41">SYS</tspan><tspan fill="#006622"> ] </tspan>BOOTING AM.DEV...
+    </text>
+    <text class="boot-dim l2" x="40" y="118">
+      <tspan fill="#006622">[ </tspan><tspan fill="#00ff41">SYS</tspan><tspan fill="#006622"> ] </tspan>LOADING PROJECTS...
+    </text>
+    <text class="boot-dim l3" x="40" y="146">
+      <tspan fill="#006622">[ </tspan><tspan fill="#00ff41">SYS</tspan><tspan fill="#006622"> ] </tspan>LOADING STACK...
+    </text>
+    <text class="boot-dim l4" x="40" y="174">
+      <tspan fill="#006622">[ </tspan><tspan fill="#00ff41">SYS</tspan><tspan fill="#006622"> ] </tspan>SYNCING GITHUB...
+    </text>
+
+    <!-- SYSTEM READY — brighter -->
+    <text class="boot-line l5" x="40" y="202" filter="url(#glow)">
+      <tspan fill="#006622">[ </tspan><tspan fill="#00ff41">OK </tspan><tspan fill="#006622"> ] </tspan><tspan fill="#00ff41">SYSTEM READY</tspan>
+    </text>
+
+    <!-- Glitch identity (disappears after reveal) -->
+    <text class="identity id-glitch" x="40" y="268" font-size="28">AM // AI • SYSTEMS • FULL-STACK</text>
+
+    <!-- Locked identity (stays visible) -->
+    <text class="identity id-final" x="40" y="268" font-size="28" filter="url(#glow)">AM // AI • SYSTEMS • FULL-STACK</text>
+
+    <!-- Blinking cursor after identity -->
+    <text class="cursor cur" x="40" y="305" font-size="16">_</text>
+
+  </g>
+
+  <!-- Scanline sweep effect -->
+  <rect class="scan-sweep" x="0" y="0" width="800" height="40" fill="url(#scanline-pattern)"/>
+</svg>

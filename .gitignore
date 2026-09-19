@@ -1,0 +1,13 @@
+# Local development & preview tools
+preview.html
+package.json
+package-lock.json
+node_modules/
+scripts/
+
+# Documentation & IDE specs
+PRD.md
+.agents/
+.vscode/
+.idea/
+*.log
