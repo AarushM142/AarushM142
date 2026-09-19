@@ -12,23 +12,13 @@
      WHOAMI + STACK TERMINAL
 ════════════════════════════════════════════════ -->
 
-<img src="assets/hero/terminal.svg" width="650" alt="whoami + stack terminal" />
+<img src="assets/hero/terminal.svg" width="800" alt="whoami + stack terminal" />
 
 </div>
 
 ---
 
-<!-- ═══════════════════════════════════════════════
-     PROJECTS — ANIMATED TERMINAL CAROUSEL
-════════════════════════════════════════════════ -->
 
-<div align="center">
-
-<img src="assets/projects/projects.svg" width="650" alt="Project Terminal — DeepTrace · ResQSampark · MetrologyEye" />
-
-</div>
-
-<br/>
 
 
 
@@ -40,7 +30,7 @@
 
 
 
-<img src="assets/github/contributions.svg" width="650" alt="Contribution Grid" />
+<img src="assets/github/contributions.svg" width="800" alt="Contribution Grid" />
 
 <br/>
 
