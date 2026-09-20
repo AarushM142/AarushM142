@@ -2,7 +2,7 @@
 <!-- DO NOT EDIT THE RAW HTML — use scripts/generate-assets.js to regenerate SVGs -->
 
 <div align="center">
-<h3>Hi, I’m Aarush. I’m not really here to build one thing and call it a day.</h3>
+<h3>Hi, I’m Aarush. Mostly building, experimenting, and occasionally wondering why I decided to build it.</h3>
 
 <h3>There’s a lot I want to learn, a lot I want to build, and I’m playing the long game :D </h3>
 
